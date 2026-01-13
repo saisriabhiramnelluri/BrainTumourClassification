@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import io
 import os
 from PIL import Image
@@ -16,6 +17,12 @@ MODEL_PATH = 'model.tflite'
 interpreter = None
 input_details = None
 output_details = None
+
+if os.path.exists(MODEL_PATH):
+    size = os.path.getsize(MODEL_PATH)
+    print(f"DEBUG: Model file found. Size: {size / (1024*1024):.2f} MB")
+else:
+    print("DEBUG: Model file NOT found!")
 
 try:
     if os.path.exists(MODEL_PATH):
