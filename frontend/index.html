@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroScan | AI Brain Tumor Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>NeuroScan AI</h1>
+            <p>Upload an MRI scan for instant analysis</p>
+        </header>
+
+        <div class="upload-area" id="drop-zone">
+            <div class="scan-line"></div>
+            <input type="file" id="file-input" hidden accept="image/*">
+            <div class="icon-container">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+            </div>
+            <p class="upload-text">Drag & drop MRI Scan or <span class="highlight">Browse</span></p>
+            <img id="preview-image" src="" alt="Preview" class="hidden">
+        </div>
+
+        <button id="predict-btn" class="btn primary-btn" disabled>Analyze Scan</button>
+
+        <div id="result-card" class="result-card hidden">
+            <div class="loader hidden" id="loader"></div>
+            <div id="result-content">
+                <h3>Analysis Result</h3>
+                <div class="diagnosis">
+                    <span class="label">Diagnosis:</span>
+                    <span id="prediction-text" class="value">--</span>
+                </div>
+                <div class="confidence">
+                    <span class="label">Confidence:</span>
+                    <span id="confidence-text" class="value">--</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
