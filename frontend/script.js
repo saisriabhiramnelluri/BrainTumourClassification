@@ -9,7 +9,7 @@ const iconContainer = document.querySelector('.icon-container');
 const uploadText = document.querySelector('.upload-text');
 
 // REPLACE THIS WITH YOUR RENDER BACKEND URL AFTER DEPLOYMENT
-const API_URL = 'http://127.0.0.1:5000/predict';
+const API_URL = 'https://braintumourclassification.onrender.com/predict';
 
 // Drag & Drop Interactions
 dropZone.addEventListener('click', () => fileInput.click());
